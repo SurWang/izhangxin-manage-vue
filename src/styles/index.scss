@@ -1,0 +1,199 @@
+@import './variables.scss';
+@import './mixin.scss';
+@import './transition.scss';
+@import './element-ui.scss';
+@import './sidebar.scss';
+//@import './filter.scss';
+
+body {
+    height: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+}
+
+label {
+    font-weight: 700;
+}
+
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+#app {
+    height: 100%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+    cursor: pointer;
+    color: inherit;
+    text-decoration: none;
+}
+
+div:focus {
+    outline: none;
+}
+
+.clearfix {
+    &:after {
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: " ";
+        clear: both;
+        height: 0;
+    }
+}
+
+// main-container global css
+.app-container {
+    padding: 20px;
+}
+
+// element滚动条组件
+.el-scroll {
+    height: 100%;
+    .el-scrollbar__wrap {
+        overflow-x: hidden;
+    }
+}
+
+.manage-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.hr-header {
+    flex-shrink: 0;
+}
+
+.manage-main {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    height: 0;
+}
+
+.manage-main-body {
+    flex: auto;
+    position: relative;
+    height: 0;
+}
+
+.manage-main-footer {
+    flex-shrink: 0;
+    padding: 4px 0;
+}
+
+.hr-footer {
+    flex-shrink: 0;
+}
+
+// hr系统table公用样式
+.manage-table {
+    border-radius: 4px;
+    color: #000;
+
+    th {
+        padding: 8px 0;
+        //background-color: rgba(54, 141, 215, 1);
+        //color: #fff;
+        background-color: rgba(245, 245, 245, 1);
+        color: #000;
+        white-space: nowrap;
+    }
+
+    td {
+        padding: 4px 0;
+    }
+}
+
+.manage-table-column-checkbox {
+    margin-top: 46px;
+}
+
+.manage-dialog {
+    max-width: 100%;
+    margin-top: 5rem !important;
+}
+
+// iview icon
+.el-button {
+    [class*=ivu-icon-] {
+        vertical-align: middle;
+        font-size: 12px;
+        transform: scale(1.2);
+    }
+    [class*=ivu-icon-]+span {
+        display: inline-block;
+        margin-left: 5px;
+        vertical-align: middle;
+    }
+}
+
+.operate-button--user {
+    color: rgba(26, 179, 148, 1);
+}
+
+.operate-button--user:hover {
+    color: rgba(26, 179, 148, .7);
+}
+
+.operate-button--delete {
+    color: #f56c6c;
+}
+
+.operate-button--delete:hover {
+    color: #f78989;
+}
+
+.scroll-hidden {
+    overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #909399;
+    border-radius: 3px;
+}
+
+@media print {
+    @page {
+        size: auto;
+        margin: 0mm;
+    }
+
+    .no-print {
+        display: none;
+        opacity: 0;
+    }
+    .no-print-placeholder::placeholder {
+        font-size: 0;
+    }
+}
+
+@import './mobile.scss';

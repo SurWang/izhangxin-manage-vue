@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="renderer" content="webkit">
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <title>升级您的浏览器</title>
+    <style type="text/css">
+        * {margin: 0; padding: 0;}
+
+        .update-browser-center {
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        .update-browser-center::after,
+        .update-browser-center:after {
+            content: '';
+            display: block;
+            height: 0;
+            clear: both;
+        }
+
+        .update-browser-header {
+            height: 90px;
+        }
+
+        .update-browser-header .logo {
+            padding: 0 20px;
+            /*font-weight: bold;*/
+            font-size: 38px;
+            line-height: 90px;
+        }
+
+        .update-browser-main .update-browser-center {
+            padding-top: 68px;
+        }
+
+        .update-browser-tip {
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .update-browser-tip--max {
+            font-size: 48px;
+        }
+
+        .update-browser-tip--bot {
+            margin-top: 15px;
+            font-size: 18px;
+        }
+
+        .update-browser-tip--gray {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #a7a7a7;
+        }
+
+        .browser-list {
+            margin-top: 40px;
+            font-size: 0;
+            text-align: center;
+        }
+
+        .browser-list-item {
+            display: inline-block;
+            width: 145px;
+            margin: 0 10px;
+        }
+
+        .browser-list-item__label {
+            margin: 18px 0 15px;
+            font-size: 18px;
+        }
+
+        .btn-download {
+            display: block;
+            width:145px;
+            height: 37px;
+            border: 1px solid #fff;
+            font-size: 16px;
+            line-height: 37px;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            background-color: #00beff;
+            border-radius: 3px;
+        }
+
+        .btn-download:hover {
+            background-color: #54d2fe;
+        }
+    </style>
+
+    <script
+
+    >
+
+    </script>
+</head>
+<body>
+    <div class="update-browser-wrapper">
+        <div class="update-browser-header">
+<!--            <div class="update-browser-center">-->
+<!--                <div class="logo"><span style="color: #0088cc;">Poker</span> City</div>-->
+<!--            </div>-->
+        </div>
+        <div class="update-browser-main">
+            <div class="update-browser-center">
+                <div class="update-browser-tip update-browser-tip--max">
+                    很抱歉，您使用的浏览器暂不支持
+<!--                    ，我们正在努力兼容您使用的浏览器。-->
+                </div>
+                <div class="update-browser-tip update-browser-tip--bot">
+                    为保障您的用户体验，建议您立即升级浏览器，<b style="color: #F56C6C">您可以将当前的地址复制到以下浏览器打开</b>
+                </div>
+                <div class="browser-list">
+                    <div class="browser-list-item">
+                        <img src="/img/browser/brower_chrome.jpg">
+                        <div class="browser-list-item__label">Google Chrome</div>
+                        <a class="btn-download" href="https://www.google.cn/intl/zh-CN/chrome/">下载更新</a>
+                    </div>
+                    <div class="browser-list-item">
+                        <img src="/img/browser/brower_firefox.jpg">
+                        <div class="browser-list-item__label">火狐浏览器</div>
+                        <a class="btn-download" href="http://www.firefox.com.cn/">下载更新</a>
+                    </div>
+                    <div class="browser-list-item">
+                        <img src="/img/browser/brower_360.jpg">
+                        <div class="browser-list-item__label">360浏览器</div>
+                        <a class="btn-download" href="http://browser.360.cn/">下载更新</a>
+                    </div>
+                    <!--
+                      <img src="/img/browser/copy.png">
+                     <div class="browser-list-item">
+                          <a href="#" onclick="copyToClipboardUrl()">复制登陆链接到粘贴板</a>
+                      </div>-->
+                </div>
+                <div class="update-browser-tip update-browser-tip--gray">
+                    （如果使用360浏览器，请将浏览器模式调整为“极速模式”）
+                </div>
+                <div style="overflow: hidden; width:1px; height:1px;"><input type="text" id="url" ></input></div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function IEVersion () {
+            var userAgent = navigator.userAgent // 取得浏览器的userAgent字符串
+            var isIE = userAgent.indexOf('compatible') > -1 && userAgent.indexOf('MSIE') > -1 // 判断是否IE<11浏览器
+            var isEdge = userAgent.indexOf('Edge') > -1 && !isIE // 判断是否IE的Edge浏览器
+            var isIE11 = userAgent.indexOf('Trident') > -1 && userAgent.indexOf('rv:11.0') > -1
+            if (isIE) {
+                var reIE = new RegExp('MSIE (\\d+\\.\\d+);')
+                reIE.test(userAgent)
+                var fIEVersion = parseFloat(RegExp['$1'])
+                if (fIEVersion === 7) {
+                    return 7
+                } else if (fIEVersion === 8) {
+                    return 8
+                } else if (fIEVersion === 9) {
+                    return 9
+                } else if (fIEVersion === 10) {
+                    return 10
+                } else {
+                    return 6// IE版本<=7
+                }
+            } else if (isEdge) {
+                return 'edge'// edge
+            } else if (isIE11) {
+                return 11 // IE11
+            } else {
+                return -1// 不是ie浏览器
+            }
+        }
+
+        // 当前没用ie打开
+        if (IEVersion() == -1) {
+             var lastUrl = window.location.search.replace("?url=", "")
+            if (lastUrl) {
+                window.location.href = lastUrl
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+.filter-container {
+    margin-bottom: 10px;
+}
+
+// 搜索栏
+.filter-form {
+    overflow: hidden;
+}
+
+.filter-form-item {
+    margin-bottom: 10px;
+}
+
+.filter-wrapper {
+    border: 1px solid #EBEEF5;
+    border-radius: 4px;
+}
+
+.filter-header {
+    background-color: rgba(245, 245, 245, 1);
+}
+
+.filter-title {
+    padding: 6px 10px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #000;
+}
+
+.filter-main {
+    display: flex;
+    padding: 9px 10px 0 10px;
+}
+
+.filter-left {
+    height: 50px;
+    margin-right: 20px;
+    overflow: hidden;
+}
+
+.filter-right {
+    display: flex;
+    align-items: center;
+    height: 42px;
+}
+
+.filter-form {
+    //height: 51px;
+}
+
+.filter-form--open {
+    height: auto;
+}
+
+.filter-open-button {
+    margin-right: 10px;
+    font-size: 12px;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.filter-open-button:hover {
+    color: #48f;
+}
+
+.filter-date-picker {
+    width: 199px;
+}
+
+.filter-form__button {
+    font-size: 14px;
+}
+
+.filter-handle-button {
+    position: absolute;
+    top: 80px;
+    left: -48px;
+    width: 48px;
+    height: 48px;
+    background-color: #1ab394;
+    border-radius: 6px 0 0 6px!important;
+    font-size: 24px;
+    line-height: 48px;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+}
